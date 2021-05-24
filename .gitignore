@@ -1,0 +1,7 @@
+# ignore database files; just use the dumped SCHEMA to create the finance.db
+
+### Database ###
+*.db
+*.sqlite3
+
+# End

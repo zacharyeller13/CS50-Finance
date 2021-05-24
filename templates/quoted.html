@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote {{ stock }}
+{% endblock %}
+
+{% block main %}
+    <h2>Stock Quote</h2>
+
+    {% if not stock %}
+        <div class="container">
+            Sorry, that stock does not exist. Please enter a valid stock ticker.
+        </div>
+
+    {% else %}
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Ticker</th>
+                    <th>Company</th>
+                    <th>Current Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        {{ stock.symbol }}
+                    </td>
+                    <td>
+                        {{ stock.name }}
+                    </td>
+                    <td>
+                        ${{ stock.price }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
