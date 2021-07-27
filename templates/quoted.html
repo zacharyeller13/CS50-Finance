@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Quote {{ stock }}
+    Quote {{ stock.symbol }}
 {% endblock %}
 
 {% block main %}
@@ -13,7 +13,7 @@
         </div>
 
     {% else %}
-        <table class="table table-hover">
+        <table class="table table-striped table-hover text-left">
             <thead>
                 <tr>
                     <th>Ticker</th>
@@ -30,7 +30,7 @@
                         {{ stock.name }}
                     </td>
                     <td>
-                        ${{ stock.price }}
+                        {{ usd(stock.price) }}
                     </td>
                 </tr>
             </tbody>
